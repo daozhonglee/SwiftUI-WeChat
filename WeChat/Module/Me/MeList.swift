@@ -8,18 +8,30 @@
 
 import SwiftUI
 
+// MeList: 个人中心列表视图
+// 负责展示微信个人中心的功能列表，包括：
+// 1. 使用 ScrollView 和 VStack 实现垂直滚动列表
+// 2. 通过 Group 组件实现功能分组
+// 3. 集成个人信息头部组件
+// 4. 展示支付、收藏、相册等核心功能入口
+// 5. 使用 Separator 和 Line 组件实现分隔线样式
 struct MeList: View {
     var body: some View {
+        // ScrollView 实现列表滚动
         ScrollView {
+            // VStack 垂直布局所有功能项
             VStack(spacing: 0) {
+                // 个人信息头部分组
                 Group {
                     Header()
                     Line()
                 }
+                // 支付功能分组
                 Group {
                     MeRow(icon: "me_pay", title: "支付")
                     Line()
                 }
+                // 收藏、相册、卡包、表情分组
                 Group {
                     MeRow(icon: "me_favorite", title: "收藏")
                     Separator().padding(.leading, 52)
@@ -30,6 +42,7 @@ struct MeList: View {
                     MeRow(icon: "me_emoji", title: "表情")
                     Line()
                 }
+                // 设置分组
                 Group {
                     MeRow(icon: "me_setting", title: "设置")
                     Line()
@@ -39,6 +52,8 @@ struct MeList: View {
         }
     }
     
+    // Header: 个人信息头部组件
+    // 负责展示用户头像、昵称等个人信息
     struct Header: View {
         @State var me = Member.me
         
@@ -74,14 +89,6 @@ struct MeList: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 24, bottom: 40, trailing: 16))
-        }
-    }
-    
-    struct Line: View {
-        var body: some View {
-            Rectangle()
-                .foregroundColor(Color("light_gray"))
-                .frame(height: 8)
         }
     }
 }

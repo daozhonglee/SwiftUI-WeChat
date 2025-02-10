@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+// ContactList: 通讯录列表视图
+// 负责展示微信通讯录界面，包括：
+// 1. 使用 List 和 Section 实现分组展示的联系人列表
+// 2. 支持按字母分组显示联系人
+// 3. 整合搜索入口和新朋友入口
+// 4. 通过 NavigationLink 实现到个人资料页面的导航
+// 5. 使用 @State 管理联系人数据
 struct ContactList: View {
     @State private var contacts: [Contact] = []
     

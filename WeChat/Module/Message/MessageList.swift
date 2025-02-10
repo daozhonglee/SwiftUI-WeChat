@@ -9,6 +9,12 @@
 import Combine
 import SwiftUI
 
+// MessageList: 聊天消息列表视图
+// 负责展示聊天界面中的消息列表，包括：
+// 1. 使用 ScrollView 和 LazyVStack 实现高性能的消息列表
+// 2. 通过 ScrollViewReader 实现消息自动滚动到底部
+// 3. 支持显示消息时间戳
+// 4. 区分自己和对方的消息布局
 struct MessageList: View {
     @State private var messages: [Message] = []
     

@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+// ContactRow: 通讯录列表行组件
+// 负责展示通讯录中的单个联系人或系统功能项，包括：
+// 1. 支持系统功能项（如"新的朋友
 struct ContactRow: View {
     
     let icon: String

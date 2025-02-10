@@ -8,6 +8,13 @@
 
 import SwiftUI
 
+// DiscoverList: 发现页面列表视图
+// 负责展示微信发现页面的功能列表，包括：
+// 1. 使用 ScrollView 和 VStack 实现垂直滚动列表
+// 2. 通过 Group 组件实现功能分组
+// 3. 集成朋友圈、扫一扫、摇一摇等核心功能入口
+// 4. 使用 NavigationLink 实现页面导航
+// 5. 通过 Separator 和 Line 组件实现分隔线样式
 struct DiscoverList: View {
     var body: some View {
         ScrollView {
