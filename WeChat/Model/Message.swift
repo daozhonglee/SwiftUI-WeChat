@@ -6,27 +6,46 @@
 //  Copyright © 2019 Gesen. All rights reserved.
 //
 
+// 导入基础框架，提供基本的数据类型和功能
 import Foundation
 
+// Message 结构体：表示一条消息
+// Codable：支持编码和解码，用于数据持久化和网络传输
+// Equatable：支持相等性比较
+// Identifiable：提供唯一标识符，用于 SwiftUI 列表渲染
 struct Message: Codable, Equatable, Identifiable {
+    // 消息的唯一标识符，使用 UUID 自动生成
     var id = UUID()
+    // 消息创建时间戳，可选类型
     let createdAt: Double?
+    // 图片媒体内容，可选类型
     let image: Media?
+    // 消息发送者信息
     let member: Member
+    // 文本内容，可选类型
     let text: String?
+    // 消息类型
     let type: MessageType
+    // 语音内容，可选类型
     let voice: String?
+    // 视频媒体内容，可选类型
     let video: Media?
     
+    // 消息类型枚举
+    // String：原始值类型为字符串
+    // Codable：支持编码和解码
+    // Equatable：支持相等性比较
     enum MessageType: String, Codable, Equatable {
-        case text
-        case image
-        case voice
-        case video
+        case text   // 文本消息
+        case image  // 图片消息
+        case voice  // 语音消息
+        case video  // 视频消息
     }
 }
 
+// Message 的扩展，提供示例数据
 extension Message {
+    // 静态属性，存储示例消息数组
     static let all: [Message] = [
         Message(
             createdAt: 1559535000,

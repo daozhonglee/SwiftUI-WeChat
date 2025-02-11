@@ -57,12 +57,13 @@ struct DiscoverList: View {
         .background(Color("light_gray"))
     }
     
-    struct Line: View {
-        var body: some View {
-            Rectangle()
-                .foregroundColor(Color("light_gray"))
-                .frame(height: 8)
-        }
+  
+}
+struct Line: View {
+    var body: some View {
+        Rectangle()
+            .foregroundColor(Color("light_gray"))
+            .frame(height: 8)
     }
 }
 

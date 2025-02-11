@@ -93,6 +93,6 @@ struct MessageRow: View {
 
 struct MessageRow_Previews: PreviewProvider {
     static var previews: some View {
-        MessageRow(message: Message.testData[0], isMe: false)
+        MessageRow(message: Message.all[0], isMe: false)
     }
 }

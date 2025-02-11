@@ -6,17 +6,29 @@
 //  Copyright © 2019 Gesen. All rights reserved.
 //
 
+// 导入基础框架，提供基本的数据类型和功能
 import Foundation
 
+// Member 结构体：表示一个用户成员信息
+// Codable：支持编码和解码，用于数据持久化和网络传输
+// Equatable：支持相等性比较
+// Identifiable：提供唯一标识符，用于 SwiftUI 列表渲染
 struct Member: Codable, Equatable, Identifiable {
+    // 成员的唯一标识符，使用 UUID 自动生成
     var id = UUID()
+    // 成员朋友圈背景图片名称，可选类型
     let background: String?
+    // 成员头像图片名称
     let icon: String
+    // 成员唯一标识字符串，可选类型
     let identifier: String?
+    // 成员昵称
     let name: String
 }
 
+// Member 的扩展，提供示例成员数据
 extension Member {
+    // 预定义的 SwiftUI 官方账号成员
     static let swiftui = Member(
         background: nil,
         icon: "data_avatar1",
